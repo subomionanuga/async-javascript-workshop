@@ -4,7 +4,7 @@
 
 ## Handling errors, error first callbacks
 
-* Read the below code and then do quizz 2 and 3
+- Read the below code and then do quizz 2 and 3
 
 ```js
 const fs = require("fs");
