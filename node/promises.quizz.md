@@ -6,9 +6,17 @@ Create a promise version of the async readFile function
 const fs = require("fs");
 
 function readFile(filename, encoding) {
-  fs.readFile(filename, encoding, (err, data) => {
-    //TODO
-  });
+  const promise = new Promise((resolve, reject) => {
+    fs.readFile(filename, encoding, (err, data) => {
+      console.log("done")
+      if (err) {
+        reject(err)
+      } else {
+        resolve(data)
+      }
+    });
+  })
+  return promise
 }
 readFile("./files/demofile.txt", "utf-8")
     .then(...)
